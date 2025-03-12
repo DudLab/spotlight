@@ -1,7 +1,7 @@
 const unsigned int N_LIGHTS = 11;  
-const unsigned int LIGHT_IDS[N_LIGHTS] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+const unsigned int LIGHT_IDS[N_LIGHTS] = {0,1,2, 3, 4, 5, 6, 7, 8, 9, 10};
 const unsigned int LIGHT_PINS[N_LIGHTS] = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-const int ID_2_PIN_OFFSET = 1; // PIN = ID + ID_2_PIN_OFFSET
+const int ID_2_PIN_OFFSET = 2; // PIN = ID + ID_2_PIN_OFFSET
 bool L_STATES[N_LIGHTS] = {LOW};  
 
 void setup() {
