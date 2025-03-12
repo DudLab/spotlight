@@ -47,6 +47,33 @@ void processCommand(String input) {
         ptr = strtok(NULL, " ");
     }
 
+    if(command == "ONA")
+    {
+        for (int i = 0; i < N_LIGHTS; i++) {
+            
+            L_STATES[i] = HIGH;
+            digitalWrite(LIGHT_PINS[i], HIGH);
+        }
+    }
+
+    if(command == "OFFA")
+    {
+        for (int i = 0; i < N_LIGHTS; i++) {
+            
+            L_STATES[i] = LOW;
+            digitalWrite(LIGHT_PINS[i], LOW);
+        }
+    }
+
+    if(command == "TA")
+    {
+        for (int i = 0; i < N_LIGHTS; i++) {
+            
+            L_STATES[i] = !L_STATES[i];
+            digitalWrite(LIGHT_PINS[i], L_STATES[i]);
+        }
+    }
+
     if (command == "T") {  
         for (int i = 0; i < count; i++) {
             int idx = pinsToToggle[i];
