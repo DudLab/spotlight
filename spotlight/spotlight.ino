@@ -48,7 +48,7 @@ void serialProcess()
     {
       applyToAllLasers = true;
       selectedLaserID = -1;
-      Serial.println(F("Turning off all lasers."));
+      Serial.println(F("Apply to all lasers"));
       break;
     }
 
@@ -106,18 +106,17 @@ void serialProcess()
     {
 
       // Once the loop has come to the selected laser
-      if(i == selectedLaserID)
-      {
+      
         // Set the laser to the requested state
-        digitalWriteFast(selectedLaserPin,0); 
+        digitalWriteFast(i,0); 
         
         // And print out info about your selections
-        char sprintfBuff[38];
-        sprintf(sprintfBuff, "Ball: %d | Laser: %d | State: %d",selectedBallID,selectedLaserID,0);
-        Serial.println(sprintfBuff);
-        break; // Only used for now until other lasers are added
+        // char sprintfBuff[38];
+        // sprintf(sprintfBuff, "Ball: %d | Laser: %d | State: %d",selectedBallID,selectedLaserID,0);
+        // Serial.println(sprintfBuff);
+        
 
-      } 
+       
     }
 
   } else
