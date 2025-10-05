@@ -100,7 +100,7 @@ void serialProcess()
     }
   } else if(applyToAllLasers)
   {
-    Serial.println("Turning off all lasers.");
+    Serial.print("Turning off all lasers --");
     // Then sweep through all the lasers, turning off all except the requested laser 
     for(uint8_t i=1; i<=laserQty; i++)
     {
@@ -109,7 +109,8 @@ void serialProcess()
       
         // Set the laser to the requested state
         digitalWriteFast(i,0); 
-        
+        Serial.print(i);
+        Serial.print(",");
         // And print out info about your selections
         // char sprintfBuff[38];
         // sprintf(sprintfBuff, "Ball: %d | Laser: %d | State: %d",selectedBallID,selectedLaserID,0);
@@ -118,6 +119,7 @@ void serialProcess()
 
        
     }
+    Serial.println();
 
   } else
   {
